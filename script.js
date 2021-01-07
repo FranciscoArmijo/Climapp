@@ -2,6 +2,7 @@
 const kelvin = 273.15;
 var temperatura = document.getElementById('resultado');
 var loc = document.getElementById('loc');
+var icono = document.getElementById('icono');
 
 function selCiudad(){
     var c = document.getElementById("ciu");
@@ -15,7 +16,9 @@ const pedirClima = async(ciudad, pais)=>{
     const respuesta = await fetch(url);
     const resultado = await respuesta.json();
     const {name, weather, main} = resultado;
-    console.log(main);
+    console.log(weather[0].icon);
+    console.log(weather);
     loc.innerHTML=`Ciudad : ${name}`;
-    temperatura.innerHTML=`<h1>Temperatura: ${ parseFloat(main.temp-kelvin,10).toFixed(2)}&#x2103</h1></br>`;
+    icono.innerHTML=`<img src="icons/${weather[0].icon}.png"></br><h3>${weather[0].main}</h3>`;
+    temperatura.innerHTML=`<h1>Temp: ${ parseFloat(main.temp-kelvin,10).toFixed(1)}&#x2103</h1></br>`;
 }
