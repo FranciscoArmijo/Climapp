@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('select').formSelect();
+      });
+    </script>
+    <meta charset="utf-8">
+    
+    <title>Clima</title>
+  </head>
+  <body>
+      <div class="container">
+        <form class="col s12">
+          <div class="input-field col s12">
+            <select name="ciudad" id="ciu" onchange="selCiudad()">
+              <option value="">--Selecciona Región--</option>
+              <option value="Arica">Arica</option>
+              <option value="Tarapacá">Tarapacá</option>
+              <option value="Antofagasta">Antofagasta</option>
+              <option value="Atacama">Atacama</option>
+              <option value="Coquimbo">Coquimbo</option>
+              <option value="Valparaíso">Valparaíso</option>
+              <option value="Santiago">Santiago</option>
+              <option value="Rancagua">Rancagua</option>
+              <option value="Maule">Maule</option>
+              <option value="Chillán">Chillán</option>
+              <option value="Concepción">Concepción</option>
+              <option value="Temuco">Temuco</option>
+              <option value="Valdivia">Valdivia</option>
+              <option value="Puerto Montt">Puerto Montt</option>
+              <option value="Aysén">Aysén</option>
+            </select>
+            <label>Regiones de Chile</label>
+        </div>
+        </form>
+
+        <div id="loc" class="card-panel teal lighten-2 white-text text-darken-2"></div>
+        <div id="resultado" class="card-panel teal lighten-2 white-text text-darken-2"></div>
+      </div>
+      
+      <script src="script.js"></script>
+      
+  </body>
+</html>
