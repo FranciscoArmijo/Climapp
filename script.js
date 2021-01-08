@@ -5,8 +5,14 @@ var loc = document.getElementById('loc');
 var icono = document.getElementById('icono');
 
 function selCiudad(){
+    navigator.geolocation.getCurrentPosition(position => {
+        var long = position.coords.longitude;
+        var lat = position.coords.latitude;
+        console.log('long '+ long );
+        console.log('lat '+ lat );
+    })
+
     var c = document.getElementById("ciu");
-    console.log(c.value);
     pedirClima(c.value, 'cl');
 }
 
@@ -21,4 +27,4 @@ const pedirClima = async(ciudad, pais)=>{
     loc.innerHTML=`Ciudad : ${name}`;
     icono.innerHTML=`<img src="icons/${weather[0].icon}.png"></br><h3>${weather[0].main}</h3>`;
     temperatura.innerHTML=`<h1>Temp: ${ parseFloat(main.temp-kelvin,10).toFixed(1)}&#x2103</h1></br>`;
-}
+} 
